@@ -44,9 +44,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
@@ -90,13 +87,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\ArticlesController.cs" />
-    <Compile Include="Controllers\BlogsController.cs" />
-    <Compile Include="CustomAssembliesResolver.cs" />
-    <Compile Include="Filters\ArticlesReversedFilter.cs" />
-    <Compile Include="HeaderAppenderHandler\EndRequestHandler.cs" />
-    <Compile Include="MediaTypeFormatters\ArticleFormatter.cs" />
-    <Compile Include="MessageHandlers\HeaderAppenderHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -107,16 +97,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\UnitTestingWebAPI.Domain\UnitTestingWebAPI.Domain.csproj">
-      <Project>{cc4d97da-5fcb-481d-a578-65e932c4a44b}</Project>
-      <Name>UnitTestingWebAPI.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UnitTestingWebAPI.Services\UnitTestingWebAPI.Services.csproj">
-      <Project>{52036fa6-6e14-4f3c-b7c2-2fabe92ebc6b}</Project>
-      <Name>UnitTestingWebAPI.Services</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
