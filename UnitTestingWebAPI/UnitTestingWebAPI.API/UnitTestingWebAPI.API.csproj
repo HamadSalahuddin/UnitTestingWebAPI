@@ -92,7 +92,11 @@
   <ItemGroup>
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\BlogsController.cs" />
+    <Compile Include="CustomAssembliesResolver.cs" />
     <Compile Include="Filters\ArticlesReversedFilter.cs" />
+    <Compile Include="HeaderAppenderHandler\EndRequestHandler.cs" />
+    <Compile Include="MediaTypeFormatters\ArticleFormatter.cs" />
+    <Compile Include="MessageHandlers\HeaderAppenderHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
