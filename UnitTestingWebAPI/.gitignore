@@ -1,0 +1,15 @@
+applicationhost.config
+.vs/UnitTestingWebApi/v16
+packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1
+
+# all bin folders
+bin
+
+#obj/Debug
+UnitTestingWebApi.API/obj/Debug
+UnitTestingWebApi.API.Core/obj/Debug
+UnitTestingWebApi.Data/obj/Debug
+UnitTestingWebApi.Data/obj/Debug
+UnitTestingWebApi.Domain/obj/Debug
+UnitTestingWebApi.Services/obj/Debug
+UnitTestingWebApi.Tests/obj/Debug
