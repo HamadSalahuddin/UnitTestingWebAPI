@@ -41,7 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArticleService.cs" />
+    <Compile Include="BlogService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UnitTestingWebAPI.Data\UnitTestingWebAPI.Data.csproj">
+      <Project>{9CB9CCD9-5964-4286-9CBB-F0C5080A0EDA}</Project>
+      <Name>UnitTestingWebAPI.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnitTestingWebAPI.Domain\UnitTestingWebAPI.Domain.csproj">
+      <Project>{CC4D97DA-5FCB-481D-A578-65E932C4A44B}</Project>
+      <Name>UnitTestingWebAPI.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
