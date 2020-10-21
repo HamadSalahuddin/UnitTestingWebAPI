@@ -1,6 +1,6 @@
 applicationhost.config
 .vs/UnitTestingWebApi/v16
-packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1
+packages
 
 # all bin folders
 bin
