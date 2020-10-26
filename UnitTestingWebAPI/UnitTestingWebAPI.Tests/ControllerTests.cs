@@ -102,10 +102,22 @@ namespace UnitTestingWebAPI.Tests
         }
 
         [Test]
-        public void ControllerShouldReturnAllArticles()
+        public void ControlerShouldReturnAllArticles()
         {
-            var articlesController = new ArticlesController(articleService);
-            var result = articlesController.GetArticle(3) as OkNegotiatedContentResult<Article>;
+            var _articlesController = new ArticlesController(articleService);
+
+            var result = _articlesController.GetArticles();
+
+            CollectionAssert.AreEqual(result, randomArticles);
+        }
+
+        [Test]
+        public void ControlerShouldReturnLastArticle()
+        {
+            var _articlesController = new ArticlesController(articleService);
+
+            var result = _articlesController.GetArticle(3) as OkNegotiatedContentResult<Article>;
+
             Assert.IsNotNull(result);
             Assert.AreEqual(result.Content.Title, randomArticles.Last().Title);
         }
