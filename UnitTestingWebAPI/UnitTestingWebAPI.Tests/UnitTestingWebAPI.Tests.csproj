@@ -160,6 +160,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionFiltersTests.cs" />
     <Compile Include="ControllerTests.cs" />
     <Compile Include="Hosting\Startup.cs" />
     <Compile Include="MessageHandlerTests.cs" />
