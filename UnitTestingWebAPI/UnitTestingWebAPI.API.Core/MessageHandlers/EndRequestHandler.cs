@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace UnitTestingWebAPI.API.HeaderAppenderHandler
+namespace UnitTestingWebAPI.API.MessageHandlers
 {
     public class EndRequestHandler : DelegatingHandler
     {

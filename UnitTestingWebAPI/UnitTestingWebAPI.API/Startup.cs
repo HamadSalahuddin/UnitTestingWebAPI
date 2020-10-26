@@ -7,10 +7,13 @@ using Autofac.Integration.WebApi;
 using Microsoft.Owin;
 using Owin;
 using UnitTestingWebAPI.API.Controllers;
+using UnitTestingWebAPI.API.MessageHandlers;
 using UnitTestingWebAPI.API.MediaTypeFormatters;
 using UnitTestingWebAPI.Data.Infrastructure;
 using UnitTestingWebAPI.Data.Repositories;
 using UnitTestingWebAPI.Services;
+using HeaderAppender = UnitTestingWebAPI.API.HeaderAppenderHandler;
+using UnitTestingWebAPI.API.Filters;
 
 [assembly: OwinStartup(typeof(UnitTestingWebAPI.API.Startup))]
 
@@ -24,6 +27,9 @@ namespace UnitTestingWebAPI.API
             // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=316888
             var config = new HttpConfiguration();
             config.Services.Replace(typeof(IAssembliesResolver), new CustomAssembliesResolver());
+            config.MessageHandlers.Add(new HeaderAppender.HeaderAppenderHandler());
+            config.MessageHandlers.Add(new EndRequestHandler());
+            config.Filters.Add(new ArticlesReversedFilter());
             config.Formatters.Add(new ArticleFormatter());
 
             config.Routes.MapHttpRoute(

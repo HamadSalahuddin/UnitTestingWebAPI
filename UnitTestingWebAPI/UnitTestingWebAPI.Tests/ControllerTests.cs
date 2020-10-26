@@ -1,4 +1,5 @@
-﻿using Moq;
+﻿using Microsoft.Owin.Hosting;
+using Moq;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ using UnitTestingWebAPI.Data.Infrastructure;
 using UnitTestingWebAPI.Data.Repositories;
 using UnitTestingWebAPI.Domain;
 using UnitTestingWebAPI.Services;
+using UnitTestingWebAPI.Tests.Hosting;
 
 namespace UnitTestingWebAPI.Tests
 {
@@ -234,6 +236,24 @@ namespace UnitTestingWebAPI.Tests
 
             Assert.That(result.ModelState.Count, Is.EqualTo(1));
             Assert.That(result.ModelState.IsValid, Is.EqualTo(false));
+        }
+
+        // An Example of Integration Test.
+        [Test]
+        public void ShouldCallToControllerActionAppendCustomHeader()
+        {
+            // Arrange
+            var address = "http://localhost:9000/";
+
+            using (WebApp.Start<Startup>(address))
+            {
+                HttpClient client = new HttpClient();
+                var response = client.GetAsync(address + "api/articles").Result;
+
+                Assert.That(response.Headers.Contains("X-WebAPI-Header"), Is.True);
+                var returnedArticles = response.Content.ReadAsAsync<List<Article>>().Result;
+                Assert.That(returnedArticles.Count, Is.EqualTo(BloggerInitializer.GetAllArticles().Count));
+            }
         }
 
         #endregion

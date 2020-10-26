@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace UnitTestingWebAPI.API.MessageHandlers
+namespace UnitTestingWebAPI.API.HeaderAppenderHandler
 {
     public class HeaderAppenderHandler: DelegatingHandler
     {
