@@ -18,6 +18,7 @@ namespace UnitTestingWebAPI.API
 {
     public class Startup
     {
+        //https://chsakell.com/2015/05/10/asp-net-web-api-unit-testing/
         public void Configuration(IAppBuilder appBuilder)
         {
             // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=316888
