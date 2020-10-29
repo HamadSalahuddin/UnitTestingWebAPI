@@ -162,9 +162,12 @@
   <ItemGroup>
     <Compile Include="ActionFiltersTests.cs" />
     <Compile Include="ControllerTests.cs" />
+    <Compile Include="Helpers\ControllerActionSelector.cs" />
     <Compile Include="Hosting\Startup.cs" />
+    <Compile Include="MediaTypeFormatterTests.cs" />
     <Compile Include="MessageHandlerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RouteTests.cs" />
     <Compile Include="ServicesTests.cs" />
   </ItemGroup>
   <ItemGroup>
